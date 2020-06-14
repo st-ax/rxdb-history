@@ -63,21 +63,21 @@ export const DocumentHistory = {
     /**
      * some methods are static and can be overwritten in the overwriteable-object
      */
-    overwritable: {
-        validatePassword: function(password) {
-            if (password && typeof password !== 'string' || password.length < 10)
-                throw new TypeError('password is not valid');
-        }
-    },
+    // overwritable: {
+    //     validatePassword: function(password) {
+    //         if (password && typeof password !== 'string' || password.length < 10)
+    //             throw new TypeError('password is not valid');
+    //     }
+    // },
     /**
      * you can add hooks to the hook-list
      */
-    hooks: {
-        /**
-         * add a foo-property to each document. You can then call myDocument.foo (='bar')
-         */
-        createRxDocument: function(doc) {
-            doc.foo = 'bar';
-        }
-    }
+    // hooks: {
+    //     /**
+    //      * add a foo-property to each document. You can then call myDocument.foo (='bar')
+    //      */
+    //     createRxDocument: function(doc) {
+    //         doc.foo = 'bar';
+    //     }
+    // }
 };
