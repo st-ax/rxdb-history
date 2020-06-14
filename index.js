@@ -27,19 +27,17 @@ export const DocumentHistory = {
           const revIDs = changes[0].ok._revisions.ids.map((eachRevID) =>
             `${revStart--}-${eachRevID}`,
           )
-          const revID = `${revIDs[revIDs.length - 1]}`
           const docs = revIDs.map((eachRevID) => ({
             id: this.id,
             rev: eachRevID,
           }))
-          console.log(docs, 'fetching rev:', revID)
   
           const res = await this.collection.pouch.bulkGet({
             docs,
             revs: true,
             include_docs: true,
           })
-          console.log('res:', res)
+          // console.log('res:', res)
   
           historyMapArray = res.results.map((eachRes) => {
             if (eachRes.docs && eachRes.docs[0].ok) {
@@ -48,12 +46,12 @@ export const DocumentHistory = {
               return [thisRev,thisDoc]
             }
           }).filter(keep=>!!keep)
-          console.log(historyMapArray)
-          console.log(
-            'oldest rev:',
-            historyMapArray[historyMapArray.length - 1][0],
-            historyMapArray[historyMapArray.length - 1][1].content,
-          )
+          // console.log(historyMapArray)
+          // console.log(
+          //   'oldest rev:',
+          //   historyMapArray[historyMapArray.length - 1][0],
+          //   historyMapArray[historyMapArray.length - 1][1].content,
+          // )
         } else {
           console.warn('change result not ok :>> ', changes)
         }
