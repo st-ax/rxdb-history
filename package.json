@@ -1,8 +1,9 @@
 {
   "name": "rxdb-history",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Add revision history to rxdb documents",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
