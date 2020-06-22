@@ -1,5 +1,5 @@
 import { RxDocument } from 'rxdb'
 declare module 'rxdb-history' {
-  export const DocumentHistory: RxDB = {}
-  export type getHistoryMap = () => Promise<Map<number, RxDocument>>
+  export declare const DocumentHistory: {rxdb:Boolean}
+  export declare const getHistoryMap: () => Promise<Map<number, RxDocument>>
 }
